@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 relative min-h-screen">
+
+  <!-- ✅ Fixed Top Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white  border-b border-gray-200 h-16 flex items-center justify-between px-4 md:px-6">
+    <!-- Left: Logo + Menu toggle -->
+    <div class="flex items-center gap-4">
+      <!-- Menu toggle for small screens -->
+      <button id="menuBtn" class="md:hidden p-2 focus:outline-none focus:ring">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Logo -->
+      <img src="img/logo.svg" alt="Logo" class="h-10" />
+    </div>
+
+    <!-- Right: Inbox & Admin -->
+    <div class="flex items-center gap-4">
+      <!-- Inbox Icon -->
+      <!-- Inbox Icon with Dropdown -->
+<div class="relative">
+  <button id="inboxToggle" class="p-2 hover:text-blue-600 focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16v13H4z" />
+      <path d="M22 4l-10 7L2 4" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Messages -->
+  <div id="inboxDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white border rounded-lg shadow-lg z-50">
+    <div class="p-3 border-b">
+      <h3 class="text-sm font-medium text-gray-700">📥 New Messages</h3>
+    </div>
+    <ul class="divide-y divide-gray-100 max-h-80 overflow-y-auto text-sm">
+      <li class="p-3 hover:bg-gray-50">
+        <p class="font-semibold text-gray-800">John Doe</p>
+        <p class="text-gray-500 truncate">Can we reschedule the meeting?</p>
+        <span class="block text-xs text-gray-400 mt-1">2 mins ago</span>
+      </li>
+      <li class="p-3 hover:bg-gray-50">
+        <p class="font-semibold text-gray-800">Support Bot</p>
+        <p class="text-gray-500 truncate">Ticket #798 resolved — click to review.</p>
+        <span class="block text-xs text-gray-400 mt-1">10 mins ago</span>
+      </li>
+      <li class="p-3 hover:bg-gray-50 text-center text-blue-600 font-medium">
+        <a href="#">View All Messages →</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <!-- Admin Profile -->
+      <div class="relative">
+        <button id="adminToggle" class="flex items-center gap-2 px-3 py-1 rounded-full hover:bg-gray-100 focus:outline-none">
+          <img src="https://i.pravatar.cc/32" alt="Avatar" class="w-8 h-8 rounded-full" />
+          <span class="hidden md:inline text-sm font-medium">Admin</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-[1px]" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <!-- Dropdown -->
+        <div id="adminDropdown" class="hidden absolute mt-2 right-0 w-40 bg-white border rounded shadow z-50">
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Profile</a>
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ Sidebar -->
+  <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-white border-r border-gray-200 z-40 p-4 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+    <nav class="space-y-8 text-gray-800 font-medium">
+      <a href="dashboard.html" class="block font-semibold text-blue-600">📊 Dashboard</a>
+      <a href="enquiries.html" class="block hover:text-blue-600">📥 Enquiries</a>
+      <a href="collaborations.html" class="block hover:text-blue-600">🤝 Collaborations</a>
+      <a href="" class="block hover:text-blue-600">📨 Contact Us</a>
+      <a href="setting.html" class="block hover:text-blue-600">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+
+
+  <!-- Overlay for Mobile -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-30 z-30"></div>
+
+  <!-- ⚙️ Main Content -->
+  <main class="pt-24 md:ml-64 px-4 md:px-8 pb-10 bg-gray-100 min-h-screen">
+  <!-- Page Header -->
+  <div class="flex items-center justify-between mb-8">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800">⚙️ Settings</h1>
+      <p class="text-sm text-gray-500 mt-1">Manage your privacy, notifications & preferences</p>
+    </div>
+    <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition">
+      🔄 Reload
+    </a>
+  </div>
+
+  <!-- Grid Layout for Sections -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+    <!-- 🔔 Notification Preferences -->
+    <section class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow transition">
+      <h2 class="text-lg font-semibold mb-4 text-gray-900">🔔 Notification Preferences</h2>
+      <form method="POST" action="#">
+        <!-- @csrf for real Laravel form -->
+        <div class="space-y-5">
+
+          <!-- Email Notifications -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">Email Notifications</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="email_notifications" class="sr-only peer" checked>
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <!-- SMS Alerts -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">SMS Alerts</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="sms_alerts" class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <!-- Push Notifications -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">Push Notifications</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="push_notifications" class="sr-only peer" checked>
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <div class="text-right pt-4">
+            <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+              💾 Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- 🛡️ Privacy Settings -->
+    <section class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow transition">
+      <h2 class="text-lg font-semibold mb-4 text-gray-900">🛡️ Privacy Settings</h2>
+      <form method="POST" action="#">
+        <!-- @csrf -->
+        <div class="space-y-5">
+
+          <!-- Show Profile Publicly -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">Show Profile Publicly</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="show_public" class="sr-only peer" checked>
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <!-- Hide Contact Info -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">Hide Contact Info</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="hide_contact_info" class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <!-- Allow Data Sharing -->
+          <div class="flex items-center justify-between">
+            <span class="text-gray-700">Allow Data Sharing</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" name="data_sharing" class="sr-only peer">
+              <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 transition duration-300"></div>
+              <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-5"></div>
+            </label>
+          </div>
+
+          <div class="text-right pt-4">
+            <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+              🔒 Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- 🌐 Language & Region -->
+    <section class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow transition lg:col-span-2">
+      <h2 class="text-lg font-semibold mb-4 text-gray-900">🌐 Language & Region</h2>
+      <form method="POST" action="#">
+        <!-- @csrf -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Language -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Language</label>
+            <select name="language" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-blue-500 focus:border-blue-500">
+              <option selected>English</option>
+              <option>Hindi</option>
+              <option>Spanish</option>
+              <option>French</option>
+            </select>
+          </div>
+
+          <!-- Time Zone -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Time Zone</label>
+            <select name="timezone" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-blue-500 focus:border-blue-500">
+              <option selected>Asia/Kolkata (GMT+5:30)</option>
+              <option>Europe/London (GMT+0)</option>
+              <option>America/New_York (GMT-5)</option>
+              <option>Australia/Sydney (GMT+10)</option>
+            </select>
+          </div>
+
+          <!-- Save Button -->
+          <div class="md:col-span-2 text-right">
+            <button type="submit" class="mt-2 bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+              🌍 Save Settings
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </div>
+</main>
+
+  <!-- ✅ JavaScript for UI Toggles -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const adminToggle = document.getElementById("adminToggle");
+      const adminDropdown = document.getElementById("adminDropdown");
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      // Admin dropdown toggle
+      adminToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        adminDropdown.classList.toggle("hidden");
+      });
+
+      // Close admin dropdown on outside click
+      window.addEventListener("click", () => {
+        adminDropdown.classList.add("hidden");
+      });
+
+     let isSidebarOpen = false;
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        isSidebarOpen = !isSidebarOpen;
+        if (isSidebarOpen) {
+          sidebar.classList.remove("-translate-x-full");
+          overlay.classList.remove("hidden");
+        } else {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+        }
+      });
+
+      // Close all dropdowns on click outside
+      window.addEventListener("click", () => {
+        adminDropdown.classList.add("hidden");
+        inboxDropdown.classList.add("hidden");
+        if (isSidebarOpen) {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+          isSidebarOpen = false;
+        }
+      });
+
+      // Prevent overlay click from closing dropdowns
+      sidebar.addEventListener("click", e => e.stopPropagation());
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+        isSidebarOpen = false;
+      });
+    });
+    const inboxToggle = document.getElementById("inboxToggle");
+const inboxDropdown = document.getElementById("inboxDropdown");
+
+// Inbox dropdown toggle
+inboxToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  inboxDropdown.classList.toggle("hidden");
+  adminDropdown.classList.add("hidden"); // hide admin if open
+});
+window.addEventListener("click", () => {
+  if (adminDropdown) adminDropdown.classList.add("hidden");
+  if (inboxDropdown) inboxDropdown.classList.add("hidden");
+
+  if (isSidebarOpen) {
+    sidebar.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+    isSidebarOpen = false;
+  }
+});
+  </script>
+</body>
+</html>

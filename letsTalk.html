@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Lexend:wght@400;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR START -->
+
+  <div class="bg-[#F8F8F8]">
+    <nav class="h-[88px] flex items-center justify-between mx-[20px] lg:mx-[80px] ">
+
+
+      <div class="flex items-center">
+        <img src="img/logo.svg" alt="Logo" class="h-[54px] w-[215px]">
+      </div>
+
+
+      <div class="hidden lg:flex items-center gap-[48px] text-lg font-medium lexend">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="About.html" class="hover:text-blue-600">About</a>
+        <a href="ourServices.html" class="hover:text-blue-600">Our Services</a>
+        <a href="#" class="hover:text-blue-600">Our Blogs</a>
+        <a href="letsTalk.html"
+          class="bg-blue-500 text-white px-5 py-2 rounded-full text-blue-600 underline underline-offset-4 transition h-[40px] w-">
+          Let’s Talk
+        </a>
+      </div>
+
+
+      <button id="menuBtn" class="lg:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+    </nav>
+  </div>
+
+
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-4 text-[18px] font-semibold">
+    <a href="index.html" class="block hover:text-blue-600">Home</a>
+    <a href="About.html" class="block hover:text-blue-600">About</a>
+    <a href="ourServices.html" class="block hover:text-blue-600">Our Services</a>
+    <a href="#" class="block hover:text-blue-600">Our Blogs</a>
+    <a href="letsTalk.html"
+      class="block bg-blue-600 text-white px-4 py-2 ] rounded-full hover:bg-blue-700 transition">Let’s Talk</a>
+  </div>
+
+  <!-- NAVBAR End -->
+
+
+  <!-- Hero Section Start -->
+
+   <section class="w-full  h-[700px] bg-[#f9f9f9]
+           flex flex-col lg:flex-row   /* stack by default, row on lg+ */
+           items-center lg:items-center
+           justify-between
+           px-6 md:px-12 lg:px-20
+           py-16 lg:py-[160px]">
+    <!-- Text -->
+    <div class="max-w-[600px] text-center lg:text-left">
+      <h2 class="font-lexend font-semibold text-[32px] sm:text-[40px] lg:text-[53px]
+                 leading-tight lg:leading-[64px] text-[#0f2c52]">
+        Let’s
+        <span class="font-['Emblema_One'] font-normal text-[32px] sm:text-[40px] lg:text-[53px] text-[#007bff]">
+          Talk
+        </span>
+      </h2>
+
+      <p class="mt-6 lg:mt-8 font-lexend font-semibold text-[16px] sm:text-[18px] lg:text-[20px]
+                leading-[28px] sm:leading-[32px] lg:leading-[36px] text-[#415C71]">
+        Get in touch to start discussing your software product needs.
+        <br class="hidden sm:block" />
+        Not sure where to start? We can help with that too.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="mt-10 lg:mt-0 flex justify-center lg:justify-end">
+      <img src="img/discussing.svg" alt="Discussing" class="w-[524px] h-[526px] max-w-full" />
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- Contact Us Section Start -->
+
+  <div class="font-lexend mx-[20px] lg:mx-[80px] mt-[100px]">
+
+    <section class="max-w-[1280px] mx-auto px-0 py-16 bg-[#FAF9FF]">
+
+      <div class="mb-8 lg:ml-[71px] text-center lg:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0F2C52] mb-2">Get in Touch</h2>
+        <p class="text-[#415C71] text-base leading-relaxed">
+          Get in touch to start discussing your software product needs. <br class="hidden sm:block" />
+          Not sure where to start? We can help with that too.
+        </p>
+      </div>
+
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:ml-[71px]">
+
+
+        <div class="bg-white shadow-sm rounded-lg p-6 space-y-6 w-full max-w-[500px] mx-auto lg:mx-0">
+
+          <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-[#F2F6FF] rounded-full">
+              <img src="img/Overlay.svg" alt="Address Icon">
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Our Address</p>
+              <p class="font-semibold text-[#0F2C52]">1564 Goosetown Drive <br> Matthews, NC 28105</p>
+            </div>
+          </div>
+
+
+          <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-[#F2F6FF] rounded-full">
+              <img src="img/Overlay (1).svg" alt="Clock Icon">
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">We Are Available</p>
+              <p class="font-semibold text-[#0F2C52]">Mon - Fri: 9.00am to 5.00pm</p>
+              <p class="text-sm text-gray-500">[2nd Sat Holiday]</p>
+            </div>
+          </div>
+
+
+          <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-[#F2F6FF] rounded-full">
+              <img src="img/Overlay (2).svg" alt="Phone Icon">
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Contact</p>
+              <p class="font-semibold text-[#0F2C52]">+9000- 35895-4565</p>
+              <p class="font-semibold text-[#0F2C52]">support@.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-4 w-full max-w-[600px] mx-auto lg:mx-0 pr-[71px]">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Name*</label>
+            <input type="text" placeholder="Name"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address*</label>
+            <input type="email" placeholder="Email"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone*</label>
+            <input type="text" placeholder="Phone"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Subject*</label>
+            <input type="text" placeholder="Subject"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea placeholder="Message" rows="4"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+          </div>
+          <div class="flex justify-center ">
+            <button type="submit"
+              class="px-8 py-3 bg-[#007EE4] text-white rounded-full font-medium hover:bg-blue-700 transition w-full sm:w-[233px] h-[52px]">
+              Submit
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </div>
+  <!-- Contact Us Section End -->
+
+
+
+
+  <!-- Blog Section Start -->
+<section class="relative max-w-[1400px] mx-auto py-16 px-5 sm:px-6 md:px-10 lg:px-20">
+    <!-- Decorative SVG -->
+    <img src="img/XMLID_1124_.svg" alt="Background Dots"
+         class="absolute left-0 top-10 w-24 sm:w-32 md:w-40 opacity-60 pointer-events-none select-none" />
+
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#05345c] mb-12">
+      Latest News From Our Blog
+    </h2>
+
+    <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- CARD TEMPLATE -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blo.svg" alt="Blog 1" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            How To Own Web Design Agency For Free
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog1.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blog2.svg" alt="Blog 2" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            5 Difficult Things About Web Design Agency
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog2.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blog3.svg" alt="Blog 3" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            Web Design Agency Is So Famous, But Why?
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog3.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+<!-- Blog Section End -->
+
+<!-- Question Section Start -->
+
+  <body class="bg-white text-[#0f2c52]">
+    <div class="h-auto w-full flex justify-center mb-[60px]">
+      <section class="w-full max-w-[1280px] mx-4 sm:mx-8 md:mx-[80px] pt-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-10">In case you’re wondering …</h2>
+
+        <!-- Single FAQ Item -->
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">What services do you offer?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            We offer full-stack web development, UI/UX design and ongoing product maintenance to help your business
+            grow.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">Who can benefit from your services?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Start-ups, small businesses, and established enterprises looking for scalable digital solutions can all
+            benefit.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">How can I get started with you?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Simply reach out via our contact form or email. We’ll schedule a call to discuss your project requirements.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">Can I request a demo or trial before committing?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Yes, we can arrange a demo session or provide a trial version depending on the service you’re interested in.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">How do you handle support after project delivery?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            We provide dedicated post-launch support, regular updates and maintenance packages to ensure smooth
+            operation.
+          </div>
+        </div>
+
+      </section>
+    </div>
+<!-- Question Section End -->
+
+<!-- FOOTER START -->
+
+<div class="bg-gray-100">
+
+      <footer class="bg-[#043A65] text-white text-sm py-6">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between gap-8">
+
+
+          <div class="flex-1 max-w-[450px]">
+            <img src="img/logo2.svg" alt="3M Launch Logo" class="h-12 mb-1">
+
+            <p class="mt-6 leading-relaxed">We empower organizations with strategy, innovation, and</p>
+            <p class="leading-relaxed">and leadership training to build brands, scale businesses, and</p>
+            <p>create a balanced corporate culture.</p>
+
+            <h3 class="text-base font-medium mt-10 mb-2">Subscribe To Our Newsletter</h3>
+            <div
+              class="flex flex-col sm:flex-row mb-6 border border-white rounded-md focus:outline-none h-auto sm:h-[48px]">
+              <input type="email" placeholder="Your email address"
+                class="flex-1 px-4 py-2 bg-transparent w-full sm:w-[388px] rounded-t-md sm:rounded-none sm:rounded-l-md">
+              <button
+                class="sm:my-[6px] w-full sm:w-[99px] bg-white text-blue-950 rounded-b-md sm:rounded-b-none sm:rounded-r-md sm:rounded-l-md font-medium sm:mr-[16px] px-4 py-2">
+                Subscribe
+              </button>
+            </div>
+
+            <p class="text-xs">Privacy Policy | © 2025 All Rights Reserved.</p>
+          </div>
+
+
+          <div class="min-w-[100px] text-white">
+  <h4 class="text-base font-medium mb-2 ">Navigation</h4>
+  <ul class="space-y-1 text-sm">
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="about" class=" hover:underline hover:decoration-white transition-colors">About</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Training & Development</a>
+    </li>
+    <li>
+      <a href="ourService" class=" hover:underline hover:decoration-white transition-colors">Our Services</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Blogs</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Success Stories</a>
+    </li>
+    <li>
+      <a href="letsTalk" class=" hover:underline hover:decoration-white transition-colors">Contact Us</a>
+    </li>
+  </ul>
+</div>
+
+          <div class="min-w-[80px]">
+            <h4 class="text-base font-medium mb-2">Locations</h4>
+            <ul class="space-y-1 text-[16px]">
+              <li>India</li>
+              <li>Address</li>
+            </ul>
+          </div>
+
+
+          <div class="w-28">
+            <h4 class="text-base font-medium mb-2">Social Media</h4>
+            <ul class="space-y-1 text-[14px]">
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/linkedin.svg"> LinkedIn</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/twitter.svg"> Twitter</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/insta.svg"> Instagram</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/facebook.svg"> Facebook</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+
+<!-- FOOTER END -->
+
+
+
+    <script>
+    // Toggle mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  </body>
+
+</html>

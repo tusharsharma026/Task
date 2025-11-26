@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Slow infinite scroll keyframes */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="bg-[#F8F8F8]">
+    <nav class="h-[88px] flex items-center justify-between mx-[20px] lg:mx-[80px] ">
+
+
+      <div class="flex items-center">
+        <img src="img/logo.svg" alt="Logo" class="h-[54px] w-[215px]">
+      </div>
+
+
+      <div class="hidden lg:flex items-center gap-[48px] text-lg font-medium lexend">
+        <a href="index.html" class="text-blue-600 underline underline-offset-4">Home</a>
+        <a href="About.html" class="hover:text-blue-600">About</a>
+        <a href="ourServices.html" class="hover:text-blue-600">Our Services</a>
+        <a href="#" class="hover:text-blue-600">Our Blogs</a>
+        <a href="letsTalk.html" class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition h-[40px] w-">
+          Let’s Talk
+        </a>
+      </div>
+
+
+      <button id="menuBtn" class="lg:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+    </nav>
+  </div>
+
+
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-4 text-[18px] font-semibold">
+    <a href="index.html" class="block text-blue-600 underline underline-offset-4">Home</a>
+    <a href="About.html" class="block hover:text-blue-600">About</a>
+    <a href="ourServices.html" class="block hover:text-blue-600">Our Services</a>
+    <a href="#" class="block hover:text-blue-600">Our Blogs</a>
+    <a href="letsTalk.html"
+      class="block bg-blue-600 text-white px-4 py-2 ] rounded-full hover:bg-blue-700 transition">Let’s Talk</a>
+  </div>
+
+  <!-- navigation end  -->
+
+
+
+
+
+  <!-- 1st section start -->
+   <section class="relative bg-[#F8F8F8] overflow-visible pb-28">
+  <div class="grid md:grid-cols-2 items-center gap-10 px-6 lg:px-[80px] pt-8 md:pt-20">
+
+    <!-- Text Left -->
+    <div class="mb-10">
+      <p class="text-3xl md:text-5xl font-bold leading-snug md:leading-tight text-[#05345C]">
+        Transform <span class="text-blue-600 italic">Your</span> <br>
+        <span class="text-blue-600 italic">Business</span> with Strategic <br> Excellence
+      </p>
+      <p class="mt-4 text-gray-600 text-lg md:text-[24px]">
+        We empower organizations with strategy,<br> innovation, and leadership training to build <br>brands,
+        scale businesses and create a <br>balanced corporate culture.
+      </p>
+    </div>
+
+    <!-- Image Right -->
+    <div class="relative flex justify-center md:justify-end">
+      <img src="img/Group 1686552090.svg" alt="Business Woman" class="relative z-10 max-h-[664px] w-full max-w-[592px]" />
+      <div class="absolute -z-0 bottom-0 right-10 w-64 h-64 bg-blue-200 rounded-full blur-2xl opacity-50"></div>
+    </div>
+  </div>
+
+ 
+<div
+  class="w-full flex flex-col md:flex-row justify-center items-center gap-6 mt-10 md:mt-0 
+         relative md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-[-80px] z-30">
+
+  <div class="bg-white shadow-lg rounded-xl px-8 py-6 text-center w-11/12 sm:w-3/4 md:w-56">
+    <h2 class="text-2xl font-bold text-[#012F55]">100 +</h2>
+    <p class="text-[#012F55] text-sm mt-2 font-bold uppercase">Projects</p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-xl px-8 py-6 text-center w-11/12 sm:w-3/4 md:w-56">
+    <h2 class="text-2xl font-bold text-[#012F55]">100 +</h2>
+    <p class="text-[#012F55] text-sm mt-2 font-bold uppercase">Clients</p>
+  </div>
+
+  <div class="bg-white shadow-lg rounded-xl px-8 py-6 text-center w-11/12 sm:w-3/4 md:w-56">
+    <h2 class="text-2xl font-bold text-[#012F55]">10+</h2>
+    <p class="text-[#012F55] text-sm mt-2 font-bold uppercase">Years Expertise</p>
+  </div>
+</div>
+</section>
+
+
+
+  <!-- 1st Section End -->
+
+
+  <!-- 2nd Section Start -->
+  <div class="bg-white min-h-screen flex items-center justify-center -left-30 mt-80px">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 mt-[50px]">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">Solutions shaped around your growth</h2>
+      <p class="text-gray-600 text-center mb-12 text-[22px]">We partner with you to accelerate business success by
+        blending strategic thinking, innovation and hands-on execution.<br>Whether you are building from scratch or
+        scaling to the next level, our tailored solutions ensure measurable results<br> and sustainable growth.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4 "><img src="img/icon-product.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">Product Development</h3>
+          <p class="mt-2 text-gray-600">Turn your ideas into reality with structured product discovery, design and
+            development.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"> <img src="img/icon-brand-building.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">Brand Building</h3>
+          <p class="mt-2 text-gray-600">Establish a powerful brand identity that resonates with your audience, from
+            storytelling to visual presence.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"> <img src="img/icon-brand-management.svg"> </svg></span>
+          <h3 class="text-lg font-medium text-gray-900">Brand Management</h3>
+          <p class="mt-2 text-gray-600">Protect and grow your brand equity through consistent positioning,
+            communication and experience.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"><img src="img/icon-india-entry.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">India Entry Strategy</h3>
+          <p class="mt-2 text-gray-600">Expand into India with confidence. Our local expertise helps you navigate
+            regulations, culture and consumer.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"><img src="img/icon-go-to-market.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">Go-to-Market Strategy</h3>
+          <p class="mt-2 text-gray-600">Launch your products and services effectively. We design GTM strategies that
+            align with your target audience.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"><img src="img/icon-360.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">360° Business Strategy</h3>
+          <p class="mt-2 text-gray-600">Get a holistic roadmap for growth, from operations to marketing.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm  ">
+          <span class="inline-block mb-4"><img src="img/icon-corporate.svg"></span>
+          <h3 class="text-lg font-medium text-gray-900">Corporate Consultancy</h3>
+          <p class="mt-2 text-gray-600">Address complex challenges with expert insights. Our consulting services provide
+            practical solutions.</p>
+        </div>
+        <div class="bg-[#FAF9FF] p-6 rounded-lg shadow-sm ">
+          <span class="inline-block mb-4"><img src="img/icon-crown.svg"> </span>
+          <h3 class="text-lg font-medium text-gray-900">Virtual CEO (VCEO)</h3>
+          <p class="mt-2 text-gray-600">Access strategic leadership without full-time cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 2nd Section End -->
+
+
+  <!-- Corporate Training & Development Start -->
+
+  <div class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-6">Corporate Training & Development</h2>
+      <p class="text-gray-600 text-center mb-12">Empowering teams with practical skills, leadership habits, and growth
+        strategies that drive long-term success.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="bg-white p-6 rounded-lg shadow-sm ">
+          <img src="img/img1.svg" alt="Training" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-lg  font-medium text-blue-900 mt-4">Building Habits for Better Growth</h3>
+          <p class="mt-2 text-left text-gray-600">Develop sustainable habits that drive personal and professional growth.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm ">
+          <img src="img/img2.svg" alt="Time Management" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-lg font-medium text-blue-900 mt-4">Time Management Mastery</h3>
+          <p class="mt-2 text-gray-600">Master time management techniques to boost productivity and achieve work-life
+            balance.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm ">
+          <img src="img/img3.svg" alt="Self Talk" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-lg font-medium text-blue-900 mt-4">Self Talk & Manifestation</h3>
+          <p class="mt-2 text-gray-600">Harness the power of positive self-talk and manifestation techniques for
+            success.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm ">
+          <img src="img/img4.svg" alt="Work-Life Balance" class="w-full h-48 object-cover rounded-t-lg">
+          <h3 class="text-lg font-medium text-blue-900 mt-4">Work-Life Balance</h3>
+          <p class="mt-2 text-gray-600">Strategies to maintain healthy boundaries and balance between professional and
+            personal life.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm ">
+          <img src="img/img5.svg" alt="Parenting" class="w-full h-48 object-cover rounded-t-lg bg-pink-100">
+          <h3 class="text-lg font-medium text-blue-900 mt-4">Parenting with Corporate Life</h3>
+          <p class="mt-2 text-gray-600">Navigate the challenges of being a successful parent while excelling in your
+            corporate career.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Corporate Training & Development End  -->
+
+
+  <!-- Review section Start -->
+  <section class="max-w-6xl mx-auto px-6 py-16 ">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Happy Customers</h2>
+
+    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+
+      <div class="flex-shrink-0   ">
+        <img style="width: 569px; height: 454px; " src="img/Container.svg" alt="Customer"
+          class="w-[300px] h-[300px] object-cover rounded-[30px] " />
+      </div>
+
+
+      <div class="flex-1 relative">
+
+        <div class="flex justify-between items-start mb-4">
+          <div>
+
+            <img src="img/icon-brak.svg" alt="">
+          </div>
+
+
+          <div class="flex space-x-1 text-yellow-400">
+            <img src="img/icon-star.svg">
+          </div>
+        </div>
+
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          “It is a long-established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, making it look like readable English.”
+
+
+        <div>
+          <p class="font-semibold text-[#05345c]">James Thomas</p>
+          <p class="text-sm text-gray-500">UI Designer</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flex justify-center mt-10 space-x-2">
+      <img src="img/three-dot.svg">
+    </div>
+  </section>
+  <!-- Review Section End -->
+
+  <!-- Logoipsum start -->
+  <section class="max-w-7xl mx-auto px-6 py-10 overflow-hidden bg-white">
+    <!-- Track without gap-6 initially -->
+    <div id="marquee-track" class="flex w-[200%]">
+
+      <!-- === 1st copy of logos === -->
+      <div class="flex justify-between items-center flex-wrap w-1/2 shrink-0">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#8b5cf6] rounded-lg flex items-center justify-center">
+            <div class="w-2 h-2 bg-black rounded-full mx-0.5"></div>
+            <div class="w-2 h-2 bg-black rounded-full mx-0.5"></div>
+          </div>
+          <span class="text-[#6366f1] font-semibold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#f87171] rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 0L3 10h8l-8 10 16-10h-8l8-10z" />
+            </svg>
+          </div>
+          <span class="text-[#1c0f0f] font-bold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#a78bfa] rounded-full flex items-center justify-center">
+            <div class="grid grid-cols-2 gap-1">
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <span class="text-[#1e1b4b] font-semibold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+            <div class="w-4 h-4 bg-white rounded-full animate-spin-slow"></div>
+          </div>
+          <span class="text-[#3b2f2f] font-bold text-lg text-orange-500">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#1e3a8a] rounded-lg flex items-center justify-around px-1">
+            <div class="w-1.5 h-1.5 bg-[#34d399] rounded-full"></div>
+            <div class="w-1.5 h-1.5 bg-[#34d399] rounded-full"></div>
+          </div>
+          <span class="text-[#1e3a8a] font-semibold text-lg">Logoipsum</span>
+        </div>
+      </div>
+
+      <!-- === 2nd copy for seamless loop === -->
+      <div class="flex justify-between items-center flex-wrap w-1/2 shrink-0">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#8b5cf6] rounded-lg flex items-center justify-center">
+            <div class="w-2 h-2 bg-black rounded-full mx-0.5"></div>
+            <div class="w-2 h-2 bg-black rounded-full mx-0.5"></div>
+          </div>
+          <span class="text-[#6366f1] font-semibold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#f87171] rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 0L3 10h8l-8 10 16-10h-8l8-10z" />
+            </svg>
+          </div>
+          <span class="text-[#1c0f0f] font-bold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#a78bfa] rounded-full flex items-center justify-center">
+            <div class="grid grid-cols-2 gap-1">
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <span class="text-[#1e1b4b] font-semibold text-lg">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+            <div class="w-4 h-4 bg-white rounded-full animate-spin-slow"></div>
+          </div>
+          <span class="text-[#3b2f2f] font-bold text-lg text-orange-500">Logoipsum</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#1e3a8a] rounded-lg flex items-center justify-around px-1">
+            <div class="w-1.5 h-1.5 bg-[#34d399] rounded-full"></div>
+            <div class="w-1.5 h-1.5 bg-[#34d399] rounded-full"></div>
+          </div>
+          <span class="text-[#1e3a8a] font-semibold text-lg">Logoipsum</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logoipsum End -->
+
+  <!-- Blog Section Start -->
+
+<section class="relative max-w-[1400px] mx-auto py-16 px-5 sm:px-6 md:px-10 lg:px-20">
+    <!-- Decorative SVG -->
+    <img src="img/XMLID_1124_.svg" alt="Background Dots"
+         class="absolute left-0 top-10 w-24 sm:w-32 md:w-40 opacity-60 pointer-events-none select-none" />
+
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#05345c] mb-12">
+      Latest News From Our Blog
+    </h2>
+
+    <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- CARD TEMPLATE -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blo.svg" alt="Blog 1" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            How To Own Web Design Agency For Free
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog1.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blog2.svg" alt="Blog 2" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            5 Difficult Things About Web Design Agency
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog2.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all">
+        <div class="relative">
+          <img src="img/blog3.svg" alt="Blog 3" class="w-full h-64 object-cover">
+          <div class="absolute -bottom-9 right-4 flex flex-col items-center text-center">
+            <div class="bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-t-md">Oct</div>
+            <div class="bg-white px-4 py-1 text-gray-900 font-bold text-lg rounded-b-md shadow-md">22</div>
+          </div>
+        </div>
+        <div class="px-6 pt-10 pb-6">
+          <p class="text-gray-500 text-sm mb-2">Jessica Alford</p>
+          <h3 class="text-lg font-semibold text-[#05345c] leading-snug mb-6">
+            Web Design Agency Is So Famous, But Why?
+          </h3>
+          <div class="flex justify-end">
+  <a href="blog3.html" title="Read more">
+    <img src="img/Arrow.svg" alt="Arrow Icon"
+      class="w-5 h-5 hover:translate-x-1 transition-transform duration-150">
+  </a>
+</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+  <!-- blog section End -->
+
+  <!-- Question section start -->
+
+  <body class="bg-white text-[#0f2c52]">
+    <div class="h-auto w-full flex justify-center mb-[60px]">
+      <section class="w-full max-w-[1280px] mx-4 sm:mx-8 md:mx-[80px] pt-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-10">In case you’re wondering …</h2>
+
+        <!-- Single FAQ Item -->
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">What services do you offer?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            We offer full-stack web development, UI/UX design and ongoing product maintenance to help your business
+            grow.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">Who can benefit from your services?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Start-ups, small businesses, and established enterprises looking for scalable digital solutions can all
+            benefit.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">How can I get started with you?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Simply reach out via our contact form or email. We’ll schedule a call to discuss your project requirements.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">Can I request a demo or trial before committing?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            Yes, we can arrange a demo session or provide a trial version depending on the service you’re interested in.
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="border-b py-4">
+          <div class="flex flex-col sm:flex-row items-start justify-between cursor-pointer" @click="open = !open">
+            <h3 class="font-medium text-base md:text-[24px]">How do you handle support after project delivery?</h3>
+            <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-2 sm:mt-0">
+              <span x-show="!open"><img src="img/icon-plus.svg" alt="Expand"></span>
+              <span x-show="open"><img src="img/minus.png" alt="Collapse"></span>
+            </button>
+          </div>
+          <div x-show="open" x-collapse class="mt-3 text-[#0f2c52] text-base font-[250]">
+            We provide dedicated post-launch support, regular updates and maintenance packages to ensure smooth
+            operation.
+          </div>
+        </div>
+
+      </section>
+    </div>
+    <!-- Question section End -->
+
+
+
+    <!-- Let’s Collaborate Now Start -->
+    <div class="bg-white text-[#0f2c52] flex items-center">
+      <section class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-0 py-8">
+        <div class="flex flex-col md:flex-row items-center gap-6 lg:gap-10">
+
+
+          <div
+            class="md:w-1/2 w-full flex justify-center relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] mb-6 lg:mb-0">
+            <img src="img/Mask-Group.svg" alt="Lady" class="max-w-full h-auto z-10 relative" />
+          </div>
+
+
+          <div class="md:w-1/2 w-full px-4 sm:px-0">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 lg:mb-8">Let’s Collaborate Now!</h2>
+
+            <form
+              class="space-y-6 w-full max-w-[539px] min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] mt-6 lg:mt-0 flex flex-col items-center">
+
+
+              <div class="w-full">
+                <label class="block font-semibold mb-1">Full Name</label>
+                <input type="text" placeholder="Input Your Name"
+                  class="w-full px-4 py-3 bg-red-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              </div>
+
+
+              <div class="flex flex-col sm:flex-row gap-4 w-full">
+                <div class="w-full">
+                  <label class="block font-semibold mb-1">Email</label>
+                  <input type="email" placeholder="Input Your Email"
+                    class="w-full px-4 py-3 bg-red-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+                <div class="w-full">
+                  <label class="block font-semibold mb-1">Date</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-600 text-lg">
+                      <img src="img/Calendar.svg" alt="Calendar icon">
+                    </span>
+                    <input type="date"
+                      class="w-full pl-10 pr-4 py-3 bg-red-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#0f2c52]"
+                      placeholder="Select Date" />
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="w-full">
+                <label class="block font-semibold mb-1">Message</label>
+                <textarea placeholder="Write Message..." rows="5"
+                  class="w-full px-4 py-3 bg-red-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+              </div>
+
+
+              <button type="submit"
+                class="px-8 py-3 bg-[#007EE4] text-white rounded-full font-medium hover:bg-blue-700 transition w-full sm:w-[233px] h-[52px]">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Let’s Collaborate End -->
+
+
+
+ <!-- Footer Start  -->
+    <div class="bg-gray-100">
+
+      <footer class="bg-[#043A65] text-white text-sm py-6">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between gap-8">
+
+
+          <div class="flex-1 max-w-[450px]">
+            <img src="img/logo2.svg" alt="3M Launch Logo" class="h-12 mb-1">
+
+            <p class="mt-6 leading-relaxed">We empower organizations with strategy, innovation, and</p>
+            <p class="leading-relaxed">and leadership training to build brands, scale businesses, and</p>
+            <p>create a balanced corporate culture.</p>
+
+            <h3 class="text-base font-medium mt-10 mb-2">Subscribe To Our Newsletter</h3>
+            <div
+              class="flex flex-col sm:flex-row mb-6 border border-white rounded-md focus:outline-none h-auto sm:h-[48px]">
+              <input type="email" placeholder="Your email address"
+                class="flex-1 px-4 py-2 bg-transparent w-full sm:w-[388px] rounded-t-md sm:rounded-none sm:rounded-l-md">
+              <button
+                class="sm:my-[6px] w-full sm:w-[99px] bg-white text-blue-950 rounded-b-md sm:rounded-b-none sm:rounded-r-md sm:rounded-l-md font-medium sm:mr-[16px] px-4 py-2">
+                Subscribe
+              </button>
+            </div>
+
+            <p class="text-xs">Privacy Policy | © 2025 All Rights Reserved.</p>
+          </div>
+
+
+          <div class="min-w-[100px] text-white">
+  <h4 class="text-base font-medium mb-2 ">Navigation</h4>
+  <ul class="space-y-1 text-sm">
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="about" class=" hover:underline hover:decoration-white transition-colors">About</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Training & Development</a>
+    </li>
+    <li>
+      <a href="ourService" class=" hover:underline hover:decoration-white transition-colors">Our Services</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Blogs</a>
+    </li>
+    <li>
+      <a href="/" class=" hover:underline hover:decoration-white transition-colors">Success Stories</a>
+    </li>
+    <li>
+      <a href="letsTalk" class=" hover:underline hover:decoration-white transition-colors">Contact Us</a>
+    </li>
+  </ul>
+</div>
+
+          <div class="min-w-[80px]">
+            <h4 class="text-base font-medium mb-2">Locations</h4>
+            <ul class="space-y-1 text-[16px]">
+              <li>India</li>
+              <li>Address</li>
+            </ul>
+          </div>
+
+
+          <div class="w-28">
+            <h4 class="text-base font-medium mb-2">Social Media</h4>
+            <ul class="space-y-1 text-[14px]">
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/linkedin.svg"> LinkedIn</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/twitter.svg"> Twitter</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/insta.svg"> Instagram</li>
+              <li class="flex items-center gap-[4px]"><img class="h-[16px] w-[16px]" src="img/facebook.svg"> Facebook</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+
+    <!-- Footer End -->
+
+    <script>
+      // Toggle mobile menu
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+    <script>
+
+      const track = document.getElementById('marquee-track');
+      track.addEventListener('animationstart', () => {
+        track.classList.add('gap-16');
+      });
+
+      track.classList.add('animate-marquee');
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </body>
+
+</html>

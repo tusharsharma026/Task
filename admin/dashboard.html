@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 relative min-h-screen">
+
+  <!-- ✅ Fixed Top Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white  border-b border-gray-200 h-16 flex items-center justify-between px-4 md:px-6">
+    <!-- Left: Logo + Menu toggle -->
+    <div class="flex items-center gap-4">
+      <!-- Menu toggle for small screens -->
+      <button id="menuBtn" class="md:hidden p-2 focus:outline-none focus:ring">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Logo -->
+      <img src="img/logo.svg" alt="Logo" class="h-10" />
+    </div>
+
+    <!-- Right: Inbox & Admin -->
+    <div class="flex items-center gap-4">
+      <!-- Inbox Icon -->
+      <!-- Inbox Icon with Dropdown -->
+<div class="relative">
+  <button id="inboxToggle" class="p-2 hover:text-blue-600 focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16v13H4z" />
+      <path d="M22 4l-10 7L2 4" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Messages -->
+  <div id="inboxDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white border rounded-lg shadow-lg z-50">
+    <div class="p-3 border-b">
+      <h3 class="text-sm font-medium text-gray-700">📥 New Messages</h3>
+    </div>
+    <ul class="divide-y divide-gray-100 max-h-80 overflow-y-auto text-sm">
+      <li class="p-3 hover:bg-gray-50">
+        <p class="font-semibold text-gray-800">John Doe</p>
+        <p class="text-gray-500 truncate">Can we reschedule the meeting?</p>
+        <span class="block text-xs text-gray-400 mt-1">2 mins ago</span>
+      </li>
+      <li class="p-3 hover:bg-gray-50">
+        <p class="font-semibold text-gray-800">Support Bot</p>
+        <p class="text-gray-500 truncate">Ticket #798 resolved — click to review.</p>
+        <span class="block text-xs text-gray-400 mt-1">10 mins ago</span>
+      </li>
+      <li class="p-3 hover:bg-gray-50 text-center text-blue-600 font-medium">
+        <a href="#">View All Messages →</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <!-- Admin Profile -->
+      <div class="relative">
+        <button id="adminToggle" class="flex items-center gap-2 px-3 py-1 rounded-full hover:bg-gray-100 focus:outline-none">
+          <img src="https://i.pravatar.cc/32" alt="Avatar" class="w-8 h-8 rounded-full" />
+          <span class="hidden md:inline text-sm font-medium">Admin</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-[1px]" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <!-- Dropdown -->
+        <div id="adminDropdown" class="hidden absolute mt-2 right-0 w-40 bg-white border rounded shadow z-50">
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Profile</a>
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ Sidebar -->
+  <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-white border-r border-gray-200 z-40 p-4 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+    <nav class="space-y-8 text-gray-800 font-medium">
+      <a href="dashboard.html" class="block font-semibold text-blue-600">📊 Dashboard</a>
+      <a href="enquiries.html" class="block hover:text-blue-600">📥 Enquiries</a>
+      <a href="collaborations.html" class="block hover:text-blue-600">🤝 Collaborations</a>
+      <a href="" class="block hover:text-blue-600">📨 Contact Us</a>
+      <a href="setting.html" class="block hover:text-blue-600">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <!-- ✅ Overlay (mobile only) -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 z-30 hidden md:hidden"></div>
+
+  <!-- ✅ Main Content -->
+  <main class="md:pl-64 pt-20 px-4">
+  <!-- 🆕 Dashboard Content -->
+  <div class="max-w-7xl mx-auto space-y-10">
+    
+    <!-- 🧮 Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Total Leads -->
+      <div class="flex items-center p-4 bg-white rounded-lg shadow">
+        <img src="https://cdn-icons-png.flaticon.com/128/2922/2922510.png" alt="Total" class="w-10 h-10 mr-4" />
+        <div>
+          <p class="text-sm text-gray-500">Total Leads</p>
+          <p class="text-xl font-bold text-gray-800" id="totalLeads">0</p>
+        </div>
+      </div>
+
+      <!-- New Leads -->
+      <div class="flex items-center p-4 bg-white rounded-lg shadow">
+        <img src="https://cdn-icons-png.flaticon.com/128/942/942748.png" alt="New" class="w-10 h-10 mr-4" />
+        <div>
+          <p class="text-sm text-gray-500">New Leads</p>
+          <p class="text-xl font-bold text-gray-800" id="newLeads">0</p>
+        </div>
+      </div>
+
+      <!-- Completed Leads -->
+      <div class="flex items-center p-4 bg-white rounded-lg shadow">
+        <svg class="w-10 h-10 text-green-500 mr-4" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+        <div>
+          <p class="text-sm text-gray-500">Completed Leads</p>
+          <p class="text-xl font-bold text-gray-800" id="completedLeads">0</p>
+        </div>
+      </div>
+
+      <!-- Pending Leads -->
+      <div class="flex items-center p-4 bg-white rounded-lg shadow">
+        <svg class="w-10 h-10 text-yellow-500 mr-4" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 8v4l3 3" />
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+        <div>
+          <p class="text-sm text-gray-500">Pending Leads</p>
+          <p class="text-xl font-bold text-gray-800" id="pendingLeads">0</p>
+        </div>
+      </div>
+    </div>
+    <!-- 🧾 Latest Data Tables -->
+<div class=" gap-6 mt-8">
+
+  <!-- ✅ Enquiries Table -->
+<div class="bg-white p-6 rounded-lg shadow">
+  <h2 class="text-lg font-semibold text-gray-700 mb-4">Latest Enquiries</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-800">
+      <thead class="bg-gray-100 text-gray-800 text-xs uppercase">
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Message</th>
+          <th class="px-4 py-2">Status</th>
+          <th class="px-4 py-2">Date</th>
+        </tr>
+      </thead>
+      <tbody id="enquiryTable">
+        <!-- Injected by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ✅ Collaborations Table -->
+<div class="bg-white p-6 rounded-lg shadow mt-8">
+  <h2 class="text-lg font-semibold text-gray-700 mb-4">Latest Collaborations</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-800">
+      <thead class="bg-gray-100 text-gray-800 text-xs uppercase">
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Subject</th>
+          <th class="px-4 py-2">Status</th>
+          <th class="px-4 py-2">Date</th>
+        </tr>
+      </thead>
+      <tbody id="collaborationTable">
+        <!-- Injected by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+    <!-- 📊 Charts -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <!-- Bar Chart -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Lead Trends</h2>
+        <canvas id="barChart" class="w-full h-64"></canvas>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Lead Distribution</h2>
+        <canvas id="pieChart" class="w-full h-64"></canvas>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard Data Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🧮 Lead counts
+    const totalLeads = 120;
+    const newLeads = 45;
+    const completedLeads = 50;
+    const pendingLeads = 25;
+
+    document.getElementById("totalLeads").textContent = totalLeads;
+    document.getElementById("newLeads").textContent = newLeads;
+    document.getElementById("completedLeads").textContent = completedLeads;
+    document.getElementById("pendingLeads").textContent = pendingLeads;
+
+    // Bar Chart: Weekly Trend
+    new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+          label: "Leads",
+          data: [12, 19, 14, 20, 17, 12, 9],
+          backgroundColor: "#3B82F6"
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+
+    // Pie Chart: Distribution
+    new Chart(document.getElementById("pieChart"), {
+      type: "pie",
+      data: {
+        labels: ["New", "Completed", "Pending"],
+        datasets: [{
+          data: [newLeads, completedLeads, pendingLeads],
+          backgroundColor: ["#60A5FA", "#34D399", "#FCD34D"]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Sample Enquiries
+    const latestEnquiries = [
+      { id: 1, name: "Tushar", email: "tushar@example.com", message: "Want more info...", status: "pending", date: "2025-10-07" },
+      { id: 2, name: "Anya", email: "anya@example.com", message: "Pricing details", status: "completed", date: "2025-10-07" },
+      { id: 3, name: "Ravi", email: "ravi@example.com", message: "How to start?", status: "pending", date: "2025-10-06" },
+      { id: 4, name: "Mira", email: "mira@example.com", message: "Follow-up", status: "completed", date: "2025-10-06" },
+      { id: 5, name: "Krish", email: "krish@example.com", message: "Need callback", status: "pending", date: "2025-10-06" },
+      { id: 6, name: "Aditi", email: "aditi@example.com", message: "Interested in plan", status: "pending", date: "2025-10-05" },
+      { id: 7, name: "Ramesh", email: "ram@example.com", message: "Where is your office?", status: "completed", date: "2025-10-04" },
+      { id: 8, name: "Lina", email: "lina@example.com", message: "Urgent, contact me", status: "resolved", date: "2025-10-04" },
+      { id: 9, name: "Harsh", email: "harsh@example.com", message: "Please share proposal", status: "pending", date: "2025-10-04" },
+      { id: 10, name: "Zara", email: "zara@example.com", message: "Demo request", status: "completed", date: "2025-10-03" },
+    ];
+
+    const enquiriesTable = document.getElementById("enquiryTable");
+    latestEnquiries.forEach(e => {
+      enquiriesTable.innerHTML += `
+        <tr>
+          <td class="px-4 py-2">${e.id}</td>
+          <td class="px-4 py-2">${e.name}</td>
+          <td class="px-4 py-2">${e.email}</td>
+          <td class="px-4 py-2 truncate max-w-xs">${e.message}</td>
+          <td class="px-4 py-2">
+            <span class="text-xs px-2 py-1 rounded-full ${
+              e.status === 'completed' ? 'bg-green-100 text-green-700'
+              : e.status === 'resolved' ? 'bg-blue-100 text-blue-700'
+              : 'bg-yellow-100 text-yellow-700'
+            }">${e.status}</span>
+          </td>
+          <td class="px-4 py-2 text-xs text-gray-500">${e.date}</td>
+        </tr>`;
+    });
+
+    // Sample Collaborations
+    const latestCollaborations = [
+      { id: 1, name: "Dev Pvt Ltd", email: "partner1@dev.com", subject: "Product Integration", status: "pending", date: "2025-10-06" },
+      { id: 2, name: "NextSoft", email: "next@collab.com", subject: "Startup Plan", status: "completed", date: "2025-10-06" },
+      { id: 3, name: "Alpha Inc", email: "alpha@example.com", subject: "Join as Partner", status: "pending", date: "2025-10-05" },
+      { id: 4, name: "Beta Corp", email: "beta@example.com", subject: "Service Suggestion", status: "completed", date: "2025-10-04" },
+      { id: 5, name: "Innovage", email: "collab@innovage.com", subject: "Request for NDA", status: "pending", date: "2025-10-03" },
+      { id: 6, name: "Tech Tribe", email: "tribe@gmail.com", subject: "Pitch Demo", status: "pending", date: "2025-10-02" },
+      { id: 7, name: "Xfusion", email: "x@fusion.com", subject: "White-label deal", status: "completed", date: "2025-10-02" },
+      { id: 8, name: "OmegleSoft", email: "os@example.com", subject: "Custom tool request", status: "pending", date: "2025-10-01" },
+      { id: 9, name: "Zebra Co", email: "zebra@zmail.com", subject: "UX collaboration", status: "completed", date: "2025-09-30" },
+      { id: 10, name: "AtomX", email: "atomteam@ax.com", subject: "Interested in API", status: "pending", date: "2025-09-29" },
+    ];
+
+    const collabTable = document.getElementById("collaborationTable");
+    latestCollaborations.forEach(c => {
+      collabTable.innerHTML += `
+        <tr>
+          <td class="px-4 py-2">${c.id}</td>
+          <td class="px-4 py-2">${c.name}</td>
+          <td class="px-4 py-2">${c.email}</td>
+          <td class="px-4 py-2">${c.subject}</td>
+          <td class="px-4 py-2">
+            <span class="text-xs px-2 py-1 rounded-full ${
+              c.status === 'completed' ? 'bg-green-100 text-green-700'
+              : c.status === 'resolved' ? 'bg-blue-100 text-blue-700'
+              : 'bg-yellow-100 text-yellow-700'
+            }">${c.status}</span>
+          </td>
+          <td class="px-4 py-2 text-xs text-gray-500">${c.date}</td>
+        </tr>`;
+    });
+  });
+</script>
+  <!-- ✅ JS Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const adminToggle = document.getElementById("adminToggle");
+      const adminDropdown = document.getElementById("adminDropdown");
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      // Admin dropdown toggle
+      adminToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        adminDropdown.classList.toggle("hidden");
+      });
+
+      // Close admin dropdown on outside click
+      window.addEventListener("click", () => {
+        adminDropdown.classList.add("hidden");
+      });
+
+     let isSidebarOpen = false;
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        isSidebarOpen = !isSidebarOpen;
+        if (isSidebarOpen) {
+          sidebar.classList.remove("-translate-x-full");
+          overlay.classList.remove("hidden");
+        } else {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+        }
+      });
+
+      // Close all dropdowns on click outside
+      window.addEventListener("click", () => {
+        adminDropdown.classList.add("hidden");
+        inboxDropdown.classList.add("hidden");
+        if (isSidebarOpen) {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+          isSidebarOpen = false;
+        }
+      });
+
+      // Prevent overlay click from closing dropdowns
+      sidebar.addEventListener("click", e => e.stopPropagation());
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+        isSidebarOpen = false;
+      });
+    });
+    const inboxToggle = document.getElementById("inboxToggle");
+const inboxDropdown = document.getElementById("inboxDropdown");
+
+// Inbox dropdown toggle
+inboxToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  inboxDropdown.classList.toggle("hidden");
+  adminDropdown.classList.add("hidden"); // hide admin if open
+});
+window.addEventListener("click", () => {
+  if (adminDropdown) adminDropdown.classList.add("hidden");
+  if (inboxDropdown) inboxDropdown.classList.add("hidden");
+
+  if (isSidebarOpen) {
+    sidebar.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+    isSidebarOpen = false;
+  }
+});
+  </script>
+</body>
+</html>

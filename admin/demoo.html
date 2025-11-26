@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Slow infinite scroll keyframes */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="bg-[#F8F8F8]">
+    <nav class="h-[88px] flex items-center justify-between mx-[20px] lg:mx-[80px] ">
+
+
+      <div class="flex items-center">
+        <img src="img/logo.svg" alt="Logo" class="h-[54px] w-[215px]">
+      </div>
+
+
+      <div class="hidden lg:flex items-center gap-[48px] text-lg font-medium lexend">
+        <a href="index.html" class="text-blue-600 underline underline-offset-4">Home</a>
+        <a href="About.html" class="hover:text-blue-600">About</a>
+        <a href="ourServices.html" class="hover:text-blue-600">Our Services</a>
+        <a href="#" class="hover:text-blue-600">Our Blogs</a>
+        <a href="letsTalk.html" class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition h-[40px] w-">
+          Let’s Talk
+        </a>
+      </div>
+
+
+      <button id="menuBtn" class="lg:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+    </nav>
+  </div>
+
+
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-4 text-[18px] font-semibold">
+    <a href="index.html" class="block text-blue-600 underline underline-offset-4">Home</a>
+    <a href="About.html" class="block hover:text-blue-600">About</a>
+    <a href="ourServices.html" class="block hover:text-blue-600">Our Services</a>
+    <a href="#" class="block hover:text-blue-600">Our Blogs</a>
+    <a href="letsTalk.html"
+      class="block bg-blue-600 text-white px-4 py-2 ] rounded-full hover:bg-blue-700 transition">Let’s Talk</a>
+  </div>
+
+  <!-- navigation end  -->
+
+
+
+
+
+  <!-- 1st section start -->
+<section class="relative bg-[#F8F8F8] overflow-visible pb-28">
+  <div class="grid md:grid-cols-2 items-center gap-10 px-6 lg:px-[80px] pt-8 md:pt-20">
+
+    <!-- Text Left -->
+    <div class="mb-10">
+      <p class="text-3xl md:text-5xl font-bold leading-snug md:leading-tight text-[#05345C]">
+        Transform <span class="text-blue-600 italic">Your</span> <br>
+        <span class="text-blue-600 italic">Business</span> with Strategic <br> Excellence
+      </p>
+      <p class="mt-4 text-gray-600 text-lg md:text-[24px]">
+        We empower organizations with strategy,<br> innovation, and leadership training to build <br>brands,
+        scale businesses and create a <br>balanced corporate culture.
+      </p>
+    </div>
+
+    <!-- Image Right -->
+    <div class="relative flex justify-center md:justify-end">
+      <img src="img/Group 1686552090.svg" alt="Business Woman" class="relative z-10 max-h-[664px] w-full max-w-[592px]" />
+      <div class="absolute -z-0 bottom-0 right-10 w-64 h-64 bg-blue-200 rounded-full blur-2xl opacity-50"></div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div
+    class="w-full px-4 sm:px-6 lg:px-0 flex flex-col md:flex-row justify-center items-center gap-6 mt-10 md:mt-0
+           absolute md:left-1/2 md:transform md:-translate-x-1/2 md:bottom-[-40px] md:gap-6 z-30">
+    <div class="bg-white shadow-lg rounded-xl px-6 py-5 text-center w-64">
+      <h2 class="text-2xl font-bold text-blue-900">1800+</h2>
+      <p class="text-blue-900 text-sm mt-1 font-bold">500+ PROJECTS</p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl px-6 py-5 text-center w-64">
+      <h2 class="text-2xl font-bold text-blue-900">40,000+</h2>
+      <p class="text-blue-900 text-sm mt-1 font-bold">200+ CLIENTS</p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl px-6 py-5 text-center w-64">
+      <h2 class="text-2xl font-bold text-blue-900">10+</h2>
+      <p class="text-blue-900 text-sm mt-1 font-bold">YEARS EXPERTISE</p>
+    </div>
+  </div>
+</section>
+ 
+
+    <script>
+      // Toggle mobile menu
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+    <script>
+
+      const track = document.getElementById('marquee-track');
+      track.addEventListener('animationstart', () => {
+        track.classList.add('gap-16');
+      });
+
+      track.classList.add('animate-marquee');
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </body>
+
+</html>

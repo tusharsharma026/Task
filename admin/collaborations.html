@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📥 Enquiries</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 relative min-h-screen">
+
+  <!-- ✅ Fixed Top Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16 flex items-center justify-between px-4 md:px-6">
+    <div class="flex items-center gap-4">
+      <button id="menuBtn" class="md:hidden p-2 focus:outline-none focus:ring">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <img src="img/logo.svg" alt="Logo" class="h-10" />
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="relative">
+        <button id="inboxToggle" class="p-2 hover:text-blue-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16v13H4z" />
+            <path d="M22 4l-10 7L2 4" />
+          </svg>
+        </button>
+        <div id="inboxDropdown" class="hidden absolute right-0 mt-2 w-72 bg-white border rounded-lg shadow-lg z-50">
+          <div class="p-3 border-b">
+            <h3 class="text-sm font-medium text-gray-700">📥 New Messages</h3>
+          </div>
+          <ul class="divide-y divide-gray-100 max-h-80 overflow-y-auto text-sm">
+            <li class="p-3 hover:bg-gray-50">
+              <p class="font-semibold text-gray-800">John Doe</p>
+              <p class="text-gray-500 truncate">Can we reschedule the meeting?</p>
+              <span class="block text-xs text-gray-400 mt-1">2 mins ago</span>
+            </li>
+            <li class="p-3 hover:bg-gray-50">
+              <p class="font-semibold text-gray-800">Support Bot</p>
+              <p class="text-gray-500 truncate">Ticket #798 resolved — click to review.</p>
+              <span class="block text-xs text-gray-400 mt-1">10 mins ago</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Admin Drop -->
+      <div class="relative">
+        <button id="adminToggle" class="flex items-center gap-2 px-3 py-1 rounded-full hover:bg-gray-100 focus:outline-none">
+          <img src="https://i.pravatar.cc/32" alt="Avatar" class="w-8 h-8 rounded-full" />
+          <span class="hidden md:inline text-sm font-medium">Admin</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <div id="adminDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white border rounded shadow z-50">
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Profile</a>
+          <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ Sidebar -->
+  <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-white border-r border-gray-200 z-40 p-4 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+    <nav class="space-y-6 text-gray-800 font-medium">
+      <a href="#" class="block hover:text-blue-600">📊 Dashboard</a>
+      <a href="#" class="block hover:text-blue-600">📥 Enquiries</a>
+      <a href="#" class="block font-semibold text-blue-600">🤝 Collaborations</a>
+      <a href="#" class="block hover:text-blue-600">📨 Contact Us</a>
+      <a href="#" class="block hover:text-blue-600">⚙️ Settings</a>
+    </nav>
+  </aside>
+<main class="ml-0 md:ml-64 pt-20 px-4 md:px-6 pb-8">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">🤝 Collaborations</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200 text-sm text-left text-gray-700">
+        <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+          <tr>
+            <th class="px-4 py-2">ID</th>
+            <th class="px-4 py-2">Full Name</th>
+            <th class="px-4 py-2">Email</th>
+            <th class="px-4 py-2">Date</th>
+            <th class="px-4 py-2">Message</th>
+            <th class="px-4 py-2">Status</th>
+            <th class="px-4 py-2">Created At</th>
+            <th class="px-4 py-2">Updated At</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <!-- Repeat this TR dynamically for each record -->
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2">1</td>
+            <td class="px-4 py-2">Tushar</td>
+            <td class="px-4 py-2">cscccscs@gmail.com</td>
+            <td class="px-4 py-2">2025-10-17</td>
+            <td class="px-4 py-2">zz</td>
+            <td class="px-4 py-2">
+              <span class="inline-block px-2 py-0.5 text-xs font-medium text-yellow-800 bg-yellow-100 rounded">Pending</span>
+            </td>
+            <td class="px-4 py-2">2025-10-06 09:48:45</td>
+            <td class="px-4 py-2">2025-10-06 09:48:45</td>
+          </tr>
+
+          <!-- Add more rows similarly -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+
+  </script>
+
+  <!-- ✅ UI Dropdown Toggles -->
+  <script>
+    const inboxToggle = document.getElementById("inboxToggle");
+    const inboxDropdown = document.getElementById("inboxDropdown");
+    const adminToggle = document.getElementById("adminToggle");
+    const adminDropdown = document.getElementById("adminDropdown");
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    let isSidebarOpen = false;
+
+    inboxToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      inboxDropdown.classList.toggle("hidden");
+      adminDropdown.classList.add("hidden");
+    });
+
+    adminToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      adminDropdown.classList.toggle("hidden");
+      inboxDropdown.classList.add("hidden");
+    });
+
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isSidebarOpen = !isSidebarOpen;
+      sidebar.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
+
+    window.addEventListener("click", () => {
+      adminDropdown.classList.add("hidden");
+      inboxDropdown.classList.add("hidden");
+      if (isSidebarOpen) {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+        isSidebarOpen = false;
+      }
+    });
+
+    sidebar.addEventListener("click", e => e.stopPropagation());
+    overlay.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+      isSidebarOpen = false;
+    });
+  </script>
+</body>
+</html>
